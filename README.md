@@ -1,7 +1,20 @@
 # ☕ Cof/fee v3
 
+![version](https://img.shields.io/badge/version-3.0-6F4E37?style=flat-square)
+![status](https://img.shields.io/badge/status-developing-C4956A?style=flat-square)
+![coffee](https://img.shields.io/badge/coffee-caffeine_cycle-4A2C2A?style=flat-square)
+![YIE](https://img.shields.io/badge/YIE-integrated-8B6347?style=flat-square)
+
 > **"오늘 마신 커피가 내일의 두통이 되지 않게."**  
 > 카페인 주기 계산기 & 스마트 디톡스 매니저 — **YIE 통합 버전**
+
+![React](https://img.shields.io/badge/React-4A2C2A?style=flat-square&logo=react&logoColor=C4956A)
+![TypeScript](https://img.shields.io/badge/TypeScript-6F4E37?style=flat-square&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-8B6347?style=flat-square&logo=vite&logoColor=F5E6D0)
+![Jotai](https://img.shields.io/badge/Jotai-C4956A?style=flat-square)
+![Recharts](https://img.shields.io/badge/Recharts-D4A574?style=flat-square)
+![Neo4j](https://img.shields.io/badge/Neo4j-2C1A0E?style=flat-square&logo=neo4j&logoColor=C4956A)
+![EXAONE](https://img.shields.io/badge/EXAONE_3.5-Ollama-3B1F0A?style=flat-square)
 
 ---
 
@@ -56,6 +69,43 @@ Cof/fee v3 ──(HTTP)──▶ YIE /rag/query (domain=coffee)
 
 - **Stats 화면**: "논문 기반 패턴 해석" 카드 — 사용자 카페인 패턴을 학술 근거로 해석
 - **도메인 격리**: YIE 응답은 coffee 도메인 언어만 사용 (디자인/브랜드 언급 없음)
+
+---
+
+## 🧠 System Architecture
+
+```mermaid
+graph TD
+
+A[User Input<br/>섭취 / 증상 기록] --> B[Frontend<br/>React Dashboard]
+B --> C[State Layer<br/>Jotai / Hooks]
+C --> D[Half-Life Engine<br/>카페인 잔존량 계산]
+C --> E[Pattern Metrics<br/>수면 / 두통 / 절약 지표]
+D --> F[Risk Signal<br/>수면 신호등 + 두통 예보]
+E --> F
+F --> G[YIE Client<br/>domain=coffee]
+G --> H[YIE GraphRAG API<br/>/rag/evidence / /rag/query]
+H --> I[Neo4j Knowledge Graph<br/>카페인 / 수면 / 건강 논문]
+H --> J[Vector Retrieval<br/>학술 Chunk 검색]
+I --> K[Evidence Engine<br/>출처 기반 인사이트]
+J --> K
+K --> L[EXAONE / LLM Insight<br/>카페인 패턴 해석]
+L --> M[Stats Card<br/>논문 근거 + 행동 조언]
+
+style A fill:#4A2C2A,color:#fff
+style B fill:#6F4E37,color:#fff
+style C fill:#6F4E37,color:#fff
+style D fill:#8B6347,color:#fff
+style E fill:#8B6347,color:#fff
+style F fill:#A0785A,color:#fff
+style G fill:#0f766e,color:#fff
+style H fill:#0d9488,color:#fff
+style I fill:#C4956A,color:#fff
+style J fill:#D4A574,color:#000
+style K fill:#E8C99A,color:#000
+style L fill:#F5E6D0,color:#000
+style M fill:#FFF7ED,color:#4A2C2A
+```
 
 ---
 
