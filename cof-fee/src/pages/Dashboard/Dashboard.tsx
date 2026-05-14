@@ -8,6 +8,7 @@ import relaxbeen from '../../assets/characters/zen_bean.png';
 import funnybeen from '../../assets/characters/spark_bean.png';
 import composedbeen from '../../assets/characters/pro_bean.png';
 import busybeen from '../../assets/characters/hustle_bean.png';
+import coachKong from '../../assets/characters/coach_kong.png';
 import { SymptomModal } from '../../components/SymptomModal';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Activity, Coffee, X, Moon } from 'lucide-react';
@@ -505,6 +506,39 @@ const Dashboard = () => {
 
         </div>
       </div>
+
+      {/* AI 코치 플로팅 버튼 (FAB) */}
+      <motion.div
+        className="fixed bottom-24 right-6 z-50"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <button
+          onClick={() => navigate('/coach')}
+          className="relative w-16 h-16 rounded-full bg-[#F3EAD8] shadow-2xl flex items-center justify-center border-2 border-white overflow-hidden group"
+          style={{ boxShadow: '0 10px 30px rgba(229, 123, 62, 0.3)' }}
+        >
+          {/* 빛나는 오라 효과 */}
+          <motion.div 
+            className="absolute inset-0 bg-[#E57B3E] opacity-20"
+            animate={{ opacity: [0.1, 0.3, 0.1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          />
+          
+          <img 
+            src={coachKong} 
+            alt="Ask Coach" 
+            className="w-14 h-14 object-contain z-10 transition-transform group-hover:rotate-12" 
+          />
+          
+          {/* 말풍선 툴팁 (호버 시) */}
+          <div className="absolute -top-10 right-0 bg-[#5C3D2E] text-[#F3EAD8] text-[10px] px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap font-bold shadow-xl border border-white/20">
+            코치에게 물어보기!
+          </div>
+        </button>
+      </motion.div>
 
       {/* 증상 모달 */}
       {isSymptomModalOpen && <SymptomModal onClose={() => setIsSymptomModalOpen(false)} />}

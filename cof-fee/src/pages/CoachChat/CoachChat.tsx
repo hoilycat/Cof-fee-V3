@@ -116,6 +116,7 @@ const CoachChat: React.FC = () => {
               </motion.div>
             ))}
           </AnimatePresence>
+          <div className="h-10" /> {/* 추가적인 하단 여백 공간 */}
           <div ref={messagesEndRef} />
         </div>
 
