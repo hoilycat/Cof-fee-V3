@@ -11,7 +11,7 @@ interface Message {
   sender: 'ai' | 'user';
 }
 
-export const CoachChat: React.FC = () => {
+const CoachChat: React.FC = () => {
   const navigate = useNavigate();
   const [messages, setMessages] = useState<Message[]>([
     { id: 1, text: "안녕하세요! 저는 당신의 AI 카페인 코치, 콩이입니다. 오늘 컨디션은 어떠신가요? ☕️", sender: 'ai' },
@@ -139,3 +139,5 @@ export const CoachChat: React.FC = () => {
     </div>
   );
 };
+
+export default CoachChat;
