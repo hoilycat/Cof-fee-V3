@@ -4,10 +4,10 @@ import { useCaffeine } from '../../hooks/useCaffeine';
 import { useAtomValue} from 'jotai'; 
 import { caffeineLogsAtom, userProfileAtom } from '../../hooks/useCaffeineStore';
 import dayjs from 'dayjs';
-import relaxbeen from '../../assets/characters/relaxbeen.png';
-import funnybeen from '../../assets/characters/funnybeen.png';
-import composedbeen from '../../assets/characters/composedbeen.png';
-import busybeen from '../../assets/characters/busybeen.png';
+import relaxbeen from '../../assets/characters/zen_bean.png';
+import funnybeen from '../../assets/characters/spark_bean.png';
+import composedbeen from '../../assets/characters/pro_bean.png';
+import busybeen from '../../assets/characters/hustle_bean.png';
 import { SymptomModal } from '../../components/SymptomModal';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Activity, Coffee, X, Moon } from 'lucide-react';
@@ -454,6 +454,26 @@ const Dashboard = () => {
               <p className="text-[12px] opacity-90 leading-relaxed">{rec.desc}</p>
             </motion.div>
           )}
+          
+          {/* C. 코치 채팅 팝업 */}
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }} 
+            animate={{ opacity: 1, x: 0 }} 
+            exit={{ opacity: 0, x: -30, scale: 0.9 }} 
+            key="coach-chat-card"
+            className="pointer-events-auto w-full max-w-[320px] mx-auto lg:mx-0 bg-white/80 dark:bg-[#3A312B]/90 backdrop-blur-xl p-5 rounded-[30px] shadow-2xl border border-white/20 relative group cursor-pointer active:scale-95 transition-all"
+            onClick={() => navigate('/coach')}
+          >
+            <div className="flex justify-between items-center mb-3">
+              <span className="text-[10px] font-black opacity-30 uppercase tracking-widest">AI Coach</span>
+              <Activity size={22} className="text-[#E57B3E]" />
+            </div>
+            
+            <div className="space-y-1">
+              <p className="text-sm font-black dark:text-[#ECE0D1]">Cof/fee 코치에게 물어보기</p>
+              <p className="text-[11px] font-bold text-[#A3978F] leading-tight">카페인 섭취 조절이 어렵다면 상담을 시작해보세요.</p>
+            </div>
+          </motion.div>
           
         </AnimatePresence>
       </div>

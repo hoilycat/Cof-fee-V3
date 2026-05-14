@@ -10,6 +10,7 @@ import Onboarding from './pages/Onboarding/Onboarding';
 import { History } from './pages/History/History'; 
 import { Goals } from './pages/Goals/Goals';
 import { Stats } from './pages/Stats/Stats';
+import CoachChat from './pages/CoachChat/CoachChat';
 import { HouseHeart, NotebookPen, Goal, ChartArea, Settings as SettingIcon } from 'lucide-react';
 
 
@@ -102,6 +103,7 @@ function App() {
           <Route path="/history" element={<History />} />
           <Route path="/goals" element={<Goals/>} />
           <Route path="/stats" element={<Stats />} />
+          <Route path="/coach" element={<CoachChat />} />
         </Routes>
         {/* 하단 바에 테마 전달 */}
         <nav 
