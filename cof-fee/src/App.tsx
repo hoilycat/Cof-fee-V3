@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { useAtomValue } from 'jotai';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { userProfileAtom } from './hooks/useCaffeineStore';
 import { motion } from 'framer-motion';
 import Dashboard from './pages/Dashboard/Dashboard';
@@ -11,6 +11,7 @@ import { History } from './pages/History/History';
 import { Goals } from './pages/Goals/Goals';
 import { Stats } from './pages/Stats/Stats';
 import CoachChat from './pages/CoachChat/CoachChat';
+import SplashScreen from './components/SplashScreen';
 import { HouseHeart, NotebookPen, Goal, ChartArea, Settings as SettingIcon } from 'lucide-react';
 
 
@@ -49,6 +50,7 @@ const BottomNav = () => {
 function App() {
   const userProfile = useAtomValue(userProfileAtom);
   const isDark = userProfile.isDarkMode;
+  const [showSplash, setShowSplash] = useState(true);
 
 
   // 테마에 따른 배경색 정의
@@ -79,7 +81,15 @@ function App() {
     }
   }, [isDark]);
 
+  useEffect(() => {
+    const timer = window.setTimeout(() => setShowSplash(false), 3000);
+    return () => window.clearTimeout(timer);
+  }, []);
 
+
+  if (showSplash) {
+    return <SplashScreen />;
+  }
 
  // 진단을 안 받았다면 무조건 온보딩 화면으로
   if (!userProfile.hasCompletedOnboarding) {
