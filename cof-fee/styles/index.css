@@ -15,6 +15,202 @@ html, body {
   min-height: 100vh;
 }
 
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.35rem;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(196, 149, 106, 0.28), transparent 32%),
+    radial-gradient(circle at 50% 72%, rgba(229, 123, 62, 0.16), transparent 30%),
+    linear-gradient(180deg, #2a160a 0%, #1a0e05 58%, #0f0703 100%);
+  color: #e8d5b0;
+  font-family: "Courier New", monospace;
+}
+
+.splash-screen::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(115deg, transparent 0%, rgba(255, 244, 221, 0.08) 48%, transparent 68%),
+    radial-gradient(circle at 50% 52%, rgba(255, 231, 196, 0.08), transparent 22%);
+  opacity: 0;
+  animation: splashGlow 2.6s ease forwards 0.45s;
+}
+
+.splash-filter {
+  position: absolute;
+}
+
+.splash-icon-wrap {
+  position: relative;
+  width: 200px;
+  height: 197px;
+  color: #f2dfbd;
+  filter: url(#coffee-gooey) drop-shadow(0 20px 42px rgba(0, 0, 0, 0.28));
+}
+
+.splash-icon-wrap svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 197px;
+}
+
+#splash-slash {
+  opacity: 0;
+  animation: splashSpringDown 0.6s cubic-bezier(0.34, 1.6, 0.64, 1) forwards 0.1s;
+}
+
+#splash-comma {
+  opacity: 0;
+  animation: splashSpringUp 0.6s cubic-bezier(0.34, 1.6, 0.64, 1) forwards 0.5s;
+}
+
+#splash-c-letter {
+  opacity: 0;
+  transform-origin: 60% 50%;
+  animation: splashSpringPop 0.8s cubic-bezier(0.34, 1.5, 0.64, 1) forwards 0.9s;
+}
+
+.splash-brand {
+  z-index: 1;
+  color: #ead8b6;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  opacity: 0;
+  animation: splashSlideUp 0.6s cubic-bezier(0.34, 1.4, 0.64, 1) forwards 1.7s;
+}
+
+.splash-brand span {
+  color: #e57b3e;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.splash-tagline {
+  z-index: 1;
+  color: #d8b98c;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: splashSlideUp 0.5s cubic-bezier(0.34, 1.4, 0.64, 1) forwards 1.9s;
+}
+
+.splash-bar-wrap {
+  z-index: 1;
+  width: 140px;
+  height: 2px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: rgba(232, 213, 176, 0.22);
+  opacity: 0;
+  animation: splashSlideUp 0.5s cubic-bezier(0.34, 1.4, 0.64, 1) forwards 2s;
+}
+
+.splash-bar-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 2px;
+  background: #e57b3e;
+  animation: splashLoadBar 1.2s ease forwards 2.1s;
+}
+
+@keyframes splashSpringDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-70px) scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes splashSpringUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes splashSpringPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes splashSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes splashLoadBar {
+  0% {
+    width: 0;
+  }
+  60% {
+    width: 75%;
+  }
+  85% {
+    width: 90%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes splashGlow {
+  0% {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #splash-slash,
+  #splash-comma,
+  #splash-c-letter,
+  .splash-brand,
+  .splash-tagline,
+  .splash-bar-wrap,
+  .splash-bar-fill,
+  .splash-screen::before {
+    animation-duration: 0.01ms;
+    animation-delay: 0s;
+  }
+}
+
 @layer utilities {
   /* 스크롤바 숨기기 클래스 */
   .no-scrollbar::-webkit-scrollbar {
