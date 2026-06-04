@@ -4,14 +4,19 @@ import { caffeineLogsAtom, symptomLogsAtom, userProfileAtom } from '../../hooks/
 import { Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, ReferenceLine, ComposedChart, Scatter } from 'recharts';
 import { Activity, AlertCircle, Coffee, Moon, Sun } from 'lucide-react';
 import { analyzeSymptomCorrelation, getFastingReport, getNow  } from '../../lib/utiles'; 
+import { fetchYIEInsight, type RagResponse } from '../../lib/yieClient';
+import { useCaffeine } from '../../hooks/useCaffeine';
 import dayjs from 'dayjs';
 
 
 export const Stats = () => {
   const [isMounted, setIsMounted] = useState(false);
+  const [yieData, setYieData] = useState<RagResponse | null>(null);
+  const [yieLoading, setYieLoading] = useState(true);
   const logs = useAtomValue(caffeineLogsAtom);
   const symptoms = useAtomValue(symptomLogsAtom);
   const user = useAtomValue(userProfileAtom);//user 객체를 가져오기
+  const { totalCaffeine } = useCaffeine();
   const isDark = user.isDarkMode; 
   const fastingReport = getFastingReport(logs);
 
@@ -55,6 +60,20 @@ export const Stats = () => {
   const lateDays = chartData.filter(d => d.lateIntake).length;
   const morningOnlyDays = chartData.filter(d => d.onlyMorning).length;
   const symptomDays = chartData.filter(d => d.hasSymptom).length;
+
+  useEffect(() => {
+    const loadYIEInsight = async () => {
+      setYieLoading(true);
+      const data = await fetchYIEInsight(
+        `최근 7일 평균 카페인 섭취량은 ${avgCaffeine}mg이며 현재 잔존량은 ${totalCaffeine}mg입니다.`,
+        { totalCaffeine, avgCaffeine },
+      );
+      setYieData(data);
+      setYieLoading(false);
+    };
+
+    void loadYIEInsight();
+  }, [avgCaffeine, totalCaffeine]);
 
   // 증상 상관관계 분석 텍스트
   const correlationText = analyzeSymptomCorrelation(logs, symptoms);
@@ -225,6 +244,26 @@ export const Stats = () => {
             컨디션이 평소와 다를 때 꼭 기록해 주세요!
         </p>
       </div>
+
+      {(yieLoading || yieData) && (
+        <section className="mt-10">
+          <h3 className="mb-4 px-2 text-sm font-black text-[#5C3D2E] dark:text-[#ECE0D1]">논문 기반 인사이트</h3>
+          {yieLoading && (
+            <div className="h-36 animate-pulse rounded-[35px] bg-gray-200 dark:bg-white/10" />
+          )}
+          {!yieLoading && yieData && (
+            <div className="rounded-[35px] border border-gray-100 bg-white p-6 shadow-sm dark:border-white/5 dark:bg-[#3A312B]">
+              <h4 className="mb-3 text-sm font-black text-[#5C3D2E] dark:text-[#ECE0D1]">🧠 논문 기반 인사이트</h4>
+              <p className="text-xs font-medium leading-relaxed text-gray-600 dark:text-[#A3978F]">
+                {yieData.sections.recommendation ?? yieData.answer}
+              </p>
+              <p className="mt-4 text-[10px] font-bold text-gray-400 dark:text-white/30">
+                YIE GraphRAG · 카페인 학술 논문 기반
+              </p>
+            </div>
+          )}
+        </section>
+      )}
     </div>
 
   );
