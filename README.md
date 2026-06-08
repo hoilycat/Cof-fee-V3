@@ -158,7 +158,7 @@ flowchart LR
     V2 -->|"v2 클론 기반 ✅"| V3
 ```
  
-> 전체 변천사 → [`cof-fee_변천사.md`](./cof-fee_변천사.md)
+> 전체 변천사 → [`cof-fee_변천사.md`](./docs/cof-fee_변천사.md)
 >
 > > 📦 [v1 · cof-fee](https://github.com/hoilycat/cof-fee) · [v2 · cof-fee-v2](https://github.com/hoilycat/cof-fee-v2) · v3 · 현재
 
