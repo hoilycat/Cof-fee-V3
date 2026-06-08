@@ -138,6 +138,31 @@ cof-fee-v3/
             ├── Goals/       # 목표 관리
             └── Settings/    # 설정
 ```
+---
+
+## 🧬 Version History
+ 
+> 반감기 계산기 스크립트 하나에서, AI 카페인 코칭 시스템으로.
+ 
+```mermaid
+flowchart LR
+    classDef v1 fill:#FDF5E6,stroke:#D4A96A,color:#5C3A1A
+    classDef v2 fill:#D4956A,stroke:#A0622A,color:#FDF5E6
+    classDef v3 fill:#3D1F0A,stroke:#6B3D1A,color:#F5E6D0
+ 
+    V1["🌱 v1 · Python + Streamlit<br>────────────────<br>반감기 계산 엔진<br>수면 예측 · 두통 예보<br>CSV 저장 · 치킨 지수"]:::v1
+    V2["☕ v2 · React + TypeScript<br>────────────────<br>멀티페이지 앱 7개<br>온보딩 · 다크모드<br>localStorage · Jotai<br>AI 기획만 (미구현)"]:::v2
+    V3["🤖 v3 · React + TypeScript + YIE<br>────────────────<br>YIE GraphRAG 실 연동<br>1,374개 논문 청크<br>CoachChat · 캐릭터 9종<br>Vitest 테스트"]:::v3
+ 
+    V1 -->|"계산 로직 계승 ✅"| V2
+    V2 -->|"v2 클론 기반 ✅"| V3
+```
+ 
+> 전체 변천사 → [`cof-fee_변천사.md`](./cof-fee_변천사.md)
+>
+> > 📦 [v1 · cof-fee](https://github.com/hoilycat/cof-fee) · [v2 · cof-fee-v2](https://github.com/hoilycat/cof-fee-v2) · v3 · 현재
+
+
 
 ---
 
