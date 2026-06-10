@@ -181,3 +181,16 @@ flowchart LR
 
 Designed & Developed by 용용  
 감각적 사고 + 논리적 구조를 사랑하는 디자이너/메이커.
+
+
+---
+
+## 🫘 캐릭터 소개
+
+| zen_bean | hustle_bean | spark_bean | pro_bean |
+|:---:|:---:|:---:|:---:|
+| ![zen_bean](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/zen_bean.png) | ![hustle_bean](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/hustle_bean.png) | ![spark_bean](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/spark_bean.png) | ![pro_bean](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/pro_bean.png) |
+
+| coach_kong | funnybeen | relaxbeen | busybeen | composedbeen |
+|:---:|:---:|:---:|:---:|:---:|
+| ![coach_kong](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/coach_kong.png) | ![funnybeen](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/funnybeen.png) | ![relaxbeen](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/relaxbeen.png) | ![busybeen](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/busybeen.png) | ![composedbeen](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/composedbeen.png) |
