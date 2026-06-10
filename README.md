@@ -187,6 +187,9 @@ Designed & Developed by 용용
 
 ## 🫘 캐릭터 소개
 
+> v2에서 Inkscape로 직접 그린 캐릭터를 Gemini로 3D화했습니다.
+> 사용자의 컨디션 상태에 따라 다른 캐릭터가 표시됩니다.
+
 | zen_bean | hustle_bean | spark_bean | pro_bean | coach_kong |
 |:---:|:---:|:---:|:---:|:---:|
 | ![zen_bean](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/zen_bean.png) | ![hustle_bean](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/hustle_bean.png) | ![spark_bean](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/spark_bean.png) | ![pro_bean](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/pro_bean.png) | ![coach_kong](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/coach_kong.png) |
