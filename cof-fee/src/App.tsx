@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { useAtomValue } from 'jotai';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { userProfileAtom } from './hooks/useCaffeineStore';
 import { motion } from 'framer-motion';
 import Dashboard from './pages/Dashboard/Dashboard';
@@ -12,6 +12,7 @@ import { Goals } from './pages/Goals/Goals';
 import { Stats } from './pages/Stats/Stats';
 import CoachChat from './pages/CoachChat/CoachChat';
 import { HouseHeart, NotebookPen, Goal, ChartArea, Settings as SettingIcon } from 'lucide-react';
+import { SplashScreen } from './components/SplashScreen';
 
 
 const BottomNav = () => {
@@ -49,6 +50,7 @@ const BottomNav = () => {
 function App() {
   const userProfile = useAtomValue(userProfileAtom);
   const isDark = userProfile.isDarkMode;
+  const [isSplashVisible, setIsSplashVisible] = useState(true);
 
 
   // 테마에 따른 배경색 정의
@@ -78,6 +80,15 @@ function App() {
       document.documentElement.classList.remove('dark');
     }
   }, [isDark]);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setIsSplashVisible(false), 2600);
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  if (isSplashVisible) {
+    return <SplashScreen />;
+  }
 
 
 
