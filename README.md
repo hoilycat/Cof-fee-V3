@@ -18,6 +18,16 @@
 
 ---
 
+## 🎬 Demo
+
+<video src="./docs/media/cof-fee-demo-dark.mp4" width="320" autoplay loop muted playsinline></video>
+
+- 메인 데모: [`cof-fee-demo-dark.mp4`](./docs/media/cof-fee-demo-dark.mp4)
+- 스플래시 데모: [`cof-fee-splash-only.mp4`](./docs/media/cof-fee-splash-only.mp4)
+- 추가 데모: [`cof-fee-demo-v2.mp4`](./docs/media/cof-fee-demo-v2.mp4) · [`cof-fee-demo.mp4`](./docs/media/cof-fee-demo.mp4)
+
+---
+
 ## 🎯 프로젝트 정체성 (Identity)
 
 - **핵심 가치:** 양(Quantity) 조절 + 시간(Time) 관리 = 부작용 없는 건강한 커피 생활
