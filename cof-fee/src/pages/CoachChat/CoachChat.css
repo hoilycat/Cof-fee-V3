@@ -214,3 +214,22 @@
 .dark .chat-input-container { background: rgba(72, 60, 50, 0.8); }
 .dark .chat-input-field { color: #F5E8D3; }
 .dark .chat-bottom { background: linear-gradient(180deg, transparent 0%, rgba(42,36,32,0.4) 100%); }
+
+/* 타이핑 인디케이터 */
+.typing-dots span {
+  display: inline-block;
+  animation: typing-bounce 1.2s infinite;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+.typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+.typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing-bounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-6px); opacity: 1; }
+}
+
+/* 비활성화 상태 */
+.send-button:disabled { opacity: 0.4; cursor: not-allowed; }
+.chat-input-field:disabled { opacity: 0.6; cursor: not-allowed; }

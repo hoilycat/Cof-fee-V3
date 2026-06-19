@@ -2,22 +2,35 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useAtomValue } from 'jotai';
 import './CoachChat.css';
 import coachKong from '../../assets/characters/coach_kong.png';
+import { fetchYIEInsight } from '../../lib/yieClient';
+import { useCaffeine } from '../../hooks/useCaffeine';
+import { caffeineLogsAtom } from '../../hooks/useCaffeineStore';
 
 interface Message {
   id: number;
   text: string;
   sender: 'ai' | 'user';
+  isTyping?: boolean;
 }
 
 const CoachChat: React.FC = () => {
   const navigate = useNavigate();
+  const { totalCaffeine } = useCaffeine();
+  const logs = useAtomValue(caffeineLogsAtom);
   const [messages, setMessages] = useState<Message[]>([
     { id: 1, text: "안녕하세요! 저는 당신의 AI 카페인 코치, 콩이입니다. 오늘 컨디션은 어떠신가요? ☕️", sender: 'ai' },
   ]);
   const [inputText, setInputText] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // 최근 7일 평균 카페인 계산
+  const avgCaffeine = Math.round(
+    logs.slice(-7 * 10).reduce((sum, l) => sum + l.caffeineAmount, 0) / Math.max(7, 1)
+  );
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -27,22 +40,30 @@ const CoachChat: React.FC = () => {
     scrollToBottom();
   }, [messages]);
 
-  const handleSend = () => {
-    if (!inputText.trim()) return;
+  const handleSend = async () => {
+    if (!inputText.trim() || isLoading) return;
 
-    const newUserMsg: Message = { id: Date.now(), text: inputText, sender: 'user' };
+    const question = inputText;
+    const newUserMsg: Message = { id: Date.now(), text: question, sender: 'user' };
     setMessages(prev => [...prev, newUserMsg]);
     setInputText("");
+    setIsLoading(true);
 
-    // AI 응답 시뮬레이션
-    setTimeout(() => {
-      const aiResponse: Message = { 
-        id: Date.now() + 1, 
-        text: "현재 카페인 섭취량이 적절하네요! 남은 하루도 활기차게 보내시길 응원할게요. 👍", 
-        sender: 'ai' 
-      };
-      setMessages(prev => [...prev, aiResponse]);
-    }, 1000);
+    // 타이핑 인디케이터 추가
+    const typingId = Date.now() + 1;
+    setMessages(prev => [...prev, { id: typingId, text: '...', sender: 'ai', isTyping: true }]);
+
+    const yieResponse = await fetchYIEInsight(question, { totalCaffeine, avgCaffeine });
+
+    // 타이핑 인디케이터 제거 후 실제 응답 추가
+    setMessages(prev => prev.filter(m => m.id !== typingId));
+
+    const responseText = yieResponse
+      ? (yieResponse.sections.recommendation ?? yieResponse.sections.summary ?? yieResponse.answer)
+      : "지금은 YIE 서버에 연결할 수 없어요. 잠시 후 다시 시도해주세요. 🙏";
+
+    setMessages(prev => [...prev, { id: Date.now() + 2, text: responseText ?? yieResponse?.answer ?? "응답을 받지 못했어요.", sender: 'ai' }]);
+    setIsLoading(false);
   };
 
   // 성운 배경 설정 (Dashboard와 유사한 감성)
@@ -112,7 +133,11 @@ const CoachChat: React.FC = () => {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ type: "spring", damping: 20, stiffness: 300 }}
               >
-                {msg.text}
+                {msg.isTyping ? (
+                  <span className="typing-dots">
+                    <span>•</span><span>•</span><span>•</span>
+                  </span>
+                ) : msg.text}
               </motion.div>
             ))}
           </AnimatePresence>
@@ -130,8 +155,9 @@ const CoachChat: React.FC = () => {
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+              disabled={isLoading}
             />
-            <button className="send-button" onClick={handleSend}>
+            <button className="send-button" onClick={handleSend} disabled={isLoading}>
               <div className="send-triangle"></div>
             </button>
           </div>
