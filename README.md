@@ -41,6 +41,21 @@
 
 ---
 
+## 🫘 캐릭터 소개
+
+> v2에서 Inkscape로 직접 그린 캐릭터를 Gemini로 3D화했습니다.<br>
+> 사용자의 컨디션과 카페인 상태에 따라 다른 캐릭터가 표시됩니다.
+
+| zen_bean | hustle_bean | spark_bean | pro_bean | coach_kong |
+|:---:|:---:|:---:|:---:|:---:|
+| ![zen_bean](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/zen_bean.png) | ![hustle_bean](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/hustle_bean.png) | ![spark_bean](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/spark_bean.png) | ![pro_bean](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/pro_bean.png) | ![coach_kong](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/coach_kong.png) |
+
+| relaxbeen | composedbeen | busybeen | funnybeen |
+|:---:|:---:|:---:|:---:|
+| ![relaxbeen](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/relaxbeen.png) | ![composedbeen](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/composedbeen.png) | ![busybeen](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/busybeen.png) | ![funnybeen](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/funnybeen.png) |
+
+---
+
 ## ✨ 핵심 기능 (Core Features)
 
 | 기능 | 상세 내용 | 비유 및 로직 |
@@ -96,7 +111,7 @@ C --> E[Pattern Metrics<br/>수면 / 두통 / 절약 지표]
 D --> F[Risk Signal<br/>수면 신호등 + 두통 예보]
 E --> F
 F --> G[YIE Client<br/>domain=coffee]
-G --> H[YIE GraphRAG API<br/>/rag/evidence / /rag/query]
+G --> H[YIE GraphRAG API<br/>/rag/query]
 H --> I[Neo4j Knowledge Graph<br/>카페인 / 수면 / 건강 논문]
 H --> J[Vector Retrieval<br/>학술 Chunk 검색]
 I --> K[Evidence Engine<br/>출처 기반 인사이트]
@@ -182,25 +197,13 @@ flowchart LR
 - [x] 카페인 반감기 기반 잔존량 계산 엔진
 - [x] 실시간 수면 신호등 & 두통 예보
 - [x] 리액션 콩 캐릭터 시스템
-- [ ] YIE `/rag/evidence` 연동 — 논문 기반 인사이트 카드 (Stats 화면) 👈 Current
-- [x] YIE `/rag/query` 연동 — 카페인 패턴 AI 해석
+- [x] YIE `/rag/query` 연동 — Stats 인사이트 카드와 CoachChat 응답
+- [ ] 근거 상세 UI 보강
 - [ ] UI 리디자인 (v3 전용)
 
 ---
 
 ## 🌌 Credits
 
-Designed & Developed by 용용  
-감각적 사고 + 논리적 구조를 사랑하는 디자이너/메이커.
-
-
----
-
-## 🫘 캐릭터 소개
-
-> v2에서 Inkscape로 직접 그린 캐릭터를 Gemini로 3D화했습니다.
-> 사용자의 컨디션 상태에 따라 다른 캐릭터가 표시됩니다.
-
-| zen_bean | hustle_bean | spark_bean | pro_bean | coach_kong |
-|:---:|:---:|:---:|:---:|:---:|
-| ![zen_bean](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/zen_bean.png) | ![hustle_bean](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/hustle_bean.png) | ![spark_bean](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/spark_bean.png) | ![pro_bean](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/pro_bean.png) | ![coach_kong](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/coach_kong.png) |
+Designed & Developed by Kim SeoYoung<br>
+감각적 사고와 논리적 구조를 함께 다루는 프론트엔드 메이커.
