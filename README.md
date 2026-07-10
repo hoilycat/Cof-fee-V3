@@ -67,11 +67,15 @@
 
 ### v3 · Gemini 3D 캐릭터
 
-<img src="./docs/media/cof-fee-character-lineup-v3.png" alt="v3 Gemini 3D character lineup" width="760" />
+| zen_bean<br>차분한 휴식 | hustle_bean<br>작업 중 | spark_bean<br>활력 상태 | pro_bean<br>집중 모드 | coach_kong<br>AI 코치 |
+|:---:|:---:|:---:|:---:|:---:|
+| ![zen_bean](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/zen_bean.png) | ![hustle_bean](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/hustle_bean.png) | ![spark_bean](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/spark_bean.png) | ![pro_bean](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/pro_bean.png) | ![coach_kong](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/coach_kong.png) |
 
 ### v2 · Inkscape 원본 캐릭터
 
-<img src="./docs/media/cof-fee-character-lineup-v2.png" alt="v2 Inkscape character lineup" width="610" />
+| relaxbeen<br>휴식 | composedbeen<br>안정 | busybeen<br>바쁨 | funnybeen<br>기분 전환 |
+|:---:|:---:|:---:|:---:|
+| ![relaxbeen](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/relaxbeen.png) | ![composedbeen](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/composedbeen.png) | ![busybeen](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/busybeen.png) | ![funnybeen](https://raw.githubusercontent.com/hoilycat/Cof-fee-V3/master/cof-fee/src/assets/characters/funnybeen.png) |
 
 ---
 
