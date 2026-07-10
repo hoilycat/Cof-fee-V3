@@ -20,12 +20,25 @@
 
 ## 🎬 Demo
 
-<video src="./docs/media/cof-fee-demo-dark.mp4" width="320" autoplay loop muted playsinline></video>
+### 메인 데모
 
-- 메인 데모: [`cof-fee-demo-dark.mp4`](./docs/media/cof-fee-demo-dark.mp4)
-- **AI 코치 콩이 · 실제 YIE/EXAONE 응답:** [`cof-fee-kong-live-ai-demo.mp4`](./docs/media/cof-fee-kong-live-ai-demo.mp4)
-- 스플래시 데모: [`cof-fee-splash-only.mp4`](./docs/media/cof-fee-splash-only.mp4)
-- 추가 데모: [`cof-fee-demo-v2.mp4`](./docs/media/cof-fee-demo-v2.mp4) · [`cof-fee-demo.mp4`](./docs/media/cof-fee-demo.mp4)
+<video src="./docs/media/cof-fee-demo-dark.mp4" width="720" controls muted playsinline></video>
+
+[메인 데모 영상 보기](./docs/media/cof-fee-demo-dark.mp4)
+
+### AI 코치 콩이 · 실제 YIE/EXAONE 응답
+
+<video src="./docs/media/cof-fee-kong-live-ai-demo.mp4" width="720" controls muted playsinline></video>
+
+[AI 코치 콩이 데모 영상 보기](./docs/media/cof-fee-kong-live-ai-demo.mp4)
+
+### 스플래시 데모
+
+<video src="./docs/media/cof-fee-splash-only.mp4" width="480" controls muted playsinline></video>
+
+[스플래시 데모 영상 보기](./docs/media/cof-fee-splash-only.mp4)
+
+추가 데모: [`cof-fee-demo-v2.mp4`](./docs/media/cof-fee-demo-v2.mp4) · [`cof-fee-demo.mp4`](./docs/media/cof-fee-demo.mp4)
 
 ---
 
