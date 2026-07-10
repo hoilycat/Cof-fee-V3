@@ -20,21 +20,27 @@
 
 ## 🎬 Demo
 
-### 메인 데모
+### 앱 흐름 미리보기
 
-[![메인 데모](./docs/media/cof-fee-demo-preview.gif)](./docs/media/cof-fee-demo-dark.mp4)
+<a href="./docs/media/cof-fee-demo-dark.mp4">
+  <img src="./docs/media/cof-fee-demo-preview.gif" alt="앱 흐름 미리보기" width="280" />
+</a>
 
-[메인 데모 영상 보기](./docs/media/cof-fee-demo-dark.mp4)
+[전체 데모 영상 보기](./docs/media/cof-fee-demo-dark.mp4)
 
 ### AI 코치 콩이 · 실제 YIE/EXAONE 응답
 
-[![AI 코치 콩이 데모](./docs/media/cof-fee-kong-live-ai-preview.gif)](./docs/media/cof-fee-kong-live-ai-demo.mp4)
+<a href="./docs/media/cof-fee-kong-live-ai-demo.mp4">
+  <img src="./docs/media/cof-fee-kong-live-ai-preview.gif" alt="AI 코치 콩이 데모" width="280" />
+</a>
 
 [AI 코치 콩이 데모 영상 보기](./docs/media/cof-fee-kong-live-ai-demo.mp4)
 
 ### 스플래시 데모
 
-[![스플래시 데모](./docs/media/cof-fee-splash-preview.gif)](./docs/media/cof-fee-splash-only.mp4)
+<a href="./docs/media/cof-fee-splash-only.mp4">
+  <img src="./docs/media/cof-fee-splash-preview.gif" alt="스플래시 데모" width="240" />
+</a>
 
 [스플래시 데모 영상 보기](./docs/media/cof-fee-splash-only.mp4)
 
