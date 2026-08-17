@@ -114,11 +114,11 @@ const CoachChat: React.FC = () => {
             onClick={() => navigate('/')} 
           />
           <div className="header-coach-thumb">
-            <img src={coachKong} alt="Coach Kong" />
+            <img src={coachKong} alt="AI 코치 콩이" />
           </div>
           <div className="header-title-container">
             <h1 className="header-title">AI 코치 콩이</h1>
-            <span className="header-status">Online • Coaching</span>
+            <span className="header-status">온라인 · 코칭 중</span>
           </div>
         </header>
 
