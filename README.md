@@ -20,6 +20,14 @@
 
 ## 🎬 Demo
 
+### 카페인 잔존량에 따른 캐릭터 상태 변화
+
+<p align="center">
+  <img src="./docs/media/cof-fee-character-states-dark.gif" alt="카페인 잔존량에 따른 Cof/fee 캐릭터 상태 변화" width="320" />
+</p>
+
+카페인 잔존량이 `0mg → 119mg → 228mg → 298mg`으로 변하면 캐릭터·배경·게이지·상태 메시지가 함께 전환됩니다.
+
 | 사용 흐름 | AI 코치 응답 | 스플래시 |
 |:---:|:---:|:---:|
 | <a href="./docs/media/cof-fee-demo-dark.mp4"><img src="./docs/media/cof-fee-demo-preview.gif" alt="사용 흐름 미리보기" width="190" /></a> | <a href="./docs/media/cof-fee-kong-live-ai-demo.mp4"><img src="./docs/media/cof-fee-kong-live-ai-preview.gif" alt="AI 코치 콩이 데모" width="190" /></a> | <a href="./docs/media/cof-fee-splash-only.mp4"><img src="./docs/media/cof-fee-splash-preview.gif" alt="스플래시 데모" width="190" /></a> |
